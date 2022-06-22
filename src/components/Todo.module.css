@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 500px;
+  margin: auto;
+  background: #e1f1f8;
+  margin-top: 2rem;
+}
+.tasks{
+  display: flex;
+}
+.task {
+  background: rgb(244, 239, 239);
+  color: rgb(176, 172, 172);
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+#fasIcon {
+  background: rgb(244, 239, 239);
+  color: #000;
+  padding: 0.9rem;
+  border: 1px solid rgb(204, 204, 204);
+  cursor: pointer;
+}
+.form {
+  width: 90%;
+  margin: 1rem auto;
+}
+.taskInput {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+.desc {
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+.dateTime {
+  display: flex;
+  justify-content: space-between;
+}
+.date,
+.time {
+  width: 48%;
+}
+.timeInput {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.timeInputs {
+  width: 100%;
+  padding: 0.45rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.buttonContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+.buttons {
+  display: block;
+  text-align: end;
+}
+.button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem 0 1rem 0.5rem;
+  cursor: pointer;
+}
+.todo {
+  border-bottom: 1px solid #ccc;
+}
+.deleteTodo {
+  margin-right: 220px;
+  margin-top: 0.7rem;
+  background: #e1f1f8;;
+}
+.save {
+  background: rgb(65, 170, 65);
+  color: #fff;
+}
+.fasIcons,
+.cancel {
+  background: #e1f1f8;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+.taskTodos {
+  display: flex;
+  align-items: center;
+} 
+.red {
+  color: red;
+}
+.image {
+  width: 40px;
+  height: auto;
+  margin-right: 0.5rem;
+}
