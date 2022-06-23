@@ -15,7 +15,6 @@ const todoReducer = (state=initialState, action) => {
       return [...state, ...todos];
     case actionTypes.ADD_TODO:
       const isExist = state.todos.findIndex(todo => todo.id === action.payload.id);
-      console.log(isExist)
       const todos2 = state.todos.map((item) => {
         if(item.id === action.payload.id){
           return action.payload;
@@ -24,7 +23,6 @@ const todoReducer = (state=initialState, action) => {
         }
       });
       if(isExist < 0) {
-        console.log(action.payload)
         todos2.push(action.payload);
       }
       window.localStorage.setItem('todos', JSON.stringify(todos2)); 

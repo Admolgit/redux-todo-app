@@ -13,12 +13,9 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}>
-      <App />
-    </Provider> */}
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-      <App />
+        <App />
       </PersistGate>
     </Provider>
   </React.StrictMode>
