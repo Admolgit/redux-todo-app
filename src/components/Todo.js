@@ -145,7 +145,7 @@ function Todo() {
             <button className={`${Styles.cancel} ${Styles.button}`}>
               Cancel
             </button>
-            <button className={`${Styles.save} ${Styles.button}`} /**onClick={() => setShowTodoList(true)} **/>Save</button>
+            <button className={`${Styles.save} ${Styles.button}`}>Save</button>
           </div>
         </div>
       </form> : null } 

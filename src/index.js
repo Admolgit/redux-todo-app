@@ -1,12 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-// import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, store } from './app/store';
-// import persistor from './app/store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
