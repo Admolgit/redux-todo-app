@@ -18,11 +18,8 @@ function Todo() {
     assign: '',
   });
 
-  // const { task, date, time, assign } = todo;
-
   const dispatch = useDispatch();
-  const {todos} = useSelector((state) => state.todos)
-  console.log(todos, "todos");
+  const {todos} = useSelector((state) => state.todos);
   
   let count = todos.length;
 
@@ -78,10 +75,10 @@ function Todo() {
     <div className={Styles.container}>
       <div className={Styles.tasks}>
         <div className={Styles.task}>
-          <h2 className={Styles.count} onClick={() => setShowTodoList(true)}>Task {count}</h2>
+          <h2 className={Styles.count} onClick={() => setShowTodoList(!showTodoList)}>Task {count}</h2>
         </div>
         <div className={Styles.icon}>
-          <i id={Styles.fasIcon} onClick={() => setShowTodoInput(true)} className="fas fa-plus" />
+          <i id={Styles.fasIcon} onClick={() => setShowTodoInput(!showTodoInput)} className="fas fa-plus" />
         </div>
       </div>
 
