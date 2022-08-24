@@ -8,13 +8,17 @@ const initialState = {
 
 
 const todoReducer = (state=initialState, action) => {
-
+  console.log(action.payload)
+  // action returns type and payload
   switch(action.type){
+    // Persist todos in local storage
     case actionTypes.PERSIST_TODOS:
       const todos = JSON.parse(window.localStorage.getItem('todos'))
       return [...state, ...todos];
     case actionTypes.ADD_TODO:
+      // Check if todo already exists
       const isExist = state.todos.findIndex(todo => todo.id === action.payload.id);
+      // If it does, updated it
       const todos2 = state.todos.map((item) => {
         if(item.id === action.payload.id){
           return action.payload;

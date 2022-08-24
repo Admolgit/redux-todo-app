@@ -10,64 +10,75 @@ function Todo() {
   const [showTodoInput, setShowTodoInput] = useState(false);
   const [showTodoList, setShowTodoList] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-
+  // Get form input values (Set default form values to empty)
   const [todo, setTodo] = useState({
     task: '',
     date: '',
     time: '',
     assign: '',
   });
-
+  // Use dispatch to dispatch todos methods
   const dispatch = useDispatch();
+  // Get todos from the state
   const {todos} = useSelector((state) => state.todos);
-  
+  // Get todos length
   let count = todos.length;
-
+  // Handle todo submits
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Return nothing if form fields are empty and alert error
     if(todo?.task === "" || todo?.date === "" || todo?.time === "" || todo?.assign === ""){
       alert("Please fill all fields")
       return;
     }
-
+    // Setting todo id
     const id  = todo?.id ? todo?.id : uuidv4()
-
-    dispatch(addTodos({id, ...todo}))
-
+    // Dispatch add todo method
+    dispatch(addTodos({id, ...todo}));
+    // Set todo fields to default values after adding todo
     setTodo({
       task: '',
       date: '',
       time: '',
       assign: '',
     })
-
-    setShowTodoInput(false)
-    setShowTodoList(true)
+    // Hide todo fields
+    setShowTodoInput(false);
+    // Show todo list
+    setShowTodoList(true);
   }
-
+  // Getting input values to state function
   const onChangeHandler = (e)=>{
+    // Set todo to the current value
     setTodo({
       ...todo,
       [e.target.name]: e.target.value
-    }) 
+    });
   }
-
+  // Update todo
   const handleUpdate = (id)=>{
-    const filtered = todos.find((item) => item.id === id)
-    setTodo(filtered)
-    setShowTodoInput(true)
-    setShowDelete(true)
-    setShowTodoList(false)
+    const filtered = todos.find((item) => item.id === id);
+    // Set the value to input fields
+    setTodo(filtered);
+    // Show todo input fields
+    setShowTodoInput(true);
+    // Show the delete button
+    setShowDelete(true);
+    // Hide todo list
+    setShowTodoList(false);
   }
-
+  // Handle delete todo
   const handleDelete = (id)=>{
-    dispatch(deleteTodo(id))
+    // Use dispatch delete method
+    dispatch(deleteTodo(id));
+    // Set todo to empty
     setTodo({
       task: '',
       date: '',
       time: '',
       assign: '',
-    })
+    });
+    // Hide todo inputs fields
     setShowTodoInput(false)
   }
 
