@@ -1,44 +1,43 @@
-import {actionTypes} from './types';
+import { actionTypes } from "./types";
 
-const persistTodos = ()=>{
+const persistTodos = () => {
   return {
     type: actionTypes.PERSIST_TODOS,
-  }
-}
+  };
+};
 
-const getTodos = ()=> {
+const getTodos = () => {
   return {
-    type: actionTypes.GET_TODOS
-  }
-}
+    type: actionTypes.GET_TODOS,
+  };
+};
 
-const addTodos = (payload)=>{
+const addTodos = (payload) => {
   return {
     type: actionTypes.ADD_TODO,
-    payload
-  }
-}
+    payload,
+  };
+};
 
-const getTodo = (payload)=>{
+const getTodo = (payload) => {
   return {
     type: actionTypes.GET_TODO,
-    payload
-  }
-}
+    payload,
+  };
+};
 
-const updateTodo = (payload)=>{
+const updateTodo = (payload) => {
   return {
     type: actionTypes.UPDATE_TODO,
-    payload
-  }
-}
+    payload,
+  };
+};
 
-const deleteTodo = (payload)=>{
+const deleteTodo = (payload) => {
   return {
     type: actionTypes.DELETE_TODO,
-    payload
-  }
-}
+    payload,
+  };
+};
 
-
-export {getTodos, addTodos, getTodo, updateTodo, deleteTodo, persistTodos};
+export { getTodos, addTodos, getTodo, updateTodo, deleteTodo, persistTodos };
